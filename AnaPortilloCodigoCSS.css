@@ -1,0 +1,245 @@
+/* =========================================================
+   ESTILOS FUTURISTAS — ANA PORTILLO
+   Paleta: Negro (#0a0a0f), Dorado (#f1c40f / #ffd700), Morado (#9b51e0 / #a855f7)
+   ========================================================= */
+
+:root {
+    --bg-dark: #07070a;
+    --card-bg: rgba(18, 16, 26, 0.75);
+    --border-color: rgba(168, 85, 247, 0.25);
+    --gold-primary: #ffd700;
+    --gold-glow: rgba(255, 215, 0, 0.35);
+    --purple-primary: #a855f7;
+    --purple-glow: rgba(168, 85, 247, 0.4);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 30px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efectos de Resplandor de Fondo */
+.bg-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(130px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bg-glow-purple {
+    top: -100px;
+    left: -100px;
+    width: 450px;
+    height: 450px;
+    background: var(--purple-glow);
+}
+
+.bg-glow-gold {
+    bottom: -100px;
+    right: -100px;
+    width: 450px;
+    height: 450px;
+    background: var(--gold-glow);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header de Marca */
+.brand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.brand-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--gold-primary) 50%, var(--purple-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.brand-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.brand-status {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-glow);
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 215, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold-primary);
+}
+
+/* Tarjetas Estilo Glassmorphism */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+    color: var(--gold-primary);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Caja de Búsqueda */
+.search-box {
+    display: flex;
+    gap: 12px;
+}
+
+.search-box input {
+    flex: 1;
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: #fff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.search-box button {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, var(--purple-primary), #6b21a8);
+    color: #fff;
+    border: none;
+    padding: 0 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+    box-shadow: 0 0 20px var(--purple-glow);
+    transform: translateY(-2px);
+}
+
+.resultado-busqueda {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(168, 85, 247, 0.1);
+    border-left: 4px solid var(--gold-primary);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* Grid de KPIs */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.kpi-card {
+    background: rgba(18, 16, 26, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+}
+
+.kpi-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.kpi-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    color: var(--gold-primary);
+    font-weight: 700;
+}
+
+/* Gráfica */
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    color: var(--gold-primary);
+    border-color: var(--gold-primary);
+}
+
+.chart-container {
+    position: relative;
+    height: 350px;
+    margin-top: 15px;
+}

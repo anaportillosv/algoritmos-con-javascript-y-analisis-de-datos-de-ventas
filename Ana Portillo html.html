@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Portillo | Analytics & Dashboard Futurista</title>
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="AnaPortilloCodigoCSS.css">
+</head>
+<body>
+
+    <!-- Fondo de malla neón de fondo -->
+    <div class="bg-glow bg-glow-purple"></div>
+    <div class="bg-glow bg-glow-gold"></div>
+
+    <div class="container">
+        <!-- Header de Marca -->
+        <header class="brand-header">
+            <div class="brand-logo">
+                <span class="brand-name">ANA PORTILLO</span>
+                <span class="brand-tagline">INTELLIGENCE & DATA ANALYTICS</span>
+            </div>
+            <div class="brand-status">
+                <span class="status-dot"></span> SISTEMA ACTIVO
+            </div>
+        </header>
+
+        <!-- Barra de Búsqueda Interactiva -->
+        <section class="card glass-card card-search">
+            <h3><span class="icon">⚡</span> BÚSQUEDA INTERACTIVA & CONSULTAS IA</h3>
+            <div class="search-box">
+                <input type="text" id="inputBusqueda" placeholder="Ej: 'Ventas de Mayo', 'total', 'promedio', 'mes más alto'...">
+                <button id="btnBuscar">ANALIZAR</button>
+            </div>
+            <!-- Respuesta dinámica -->
+            <div id="resultadoBusqueda" class="resultado-busqueda" style="display: none;"></div>
+        </section>
+
+        <!-- Métricas Rápidas / KPIs -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <span class="kpi-label">TOTAL ACUMULADO</span>
+                <span class="kpi-value" id="kpiTotal">$0</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">PROMEDIO MENSUAL</span>
+                <span class="kpi-value" id="kpiPromedio">$0</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">MÁXIMO HISTÓRICO</span>
+                <span class="kpi-value" id="kpiMax">-</span>
+            </div>
+            <div class="kpi-card">
+                <span class="kpi-label">MÍNIMO REGISTRADO</span>
+                <span class="kpi-value" id="kpiMin">-</span>
+            </div>
+        </section>
+
+        <!-- Gráfica de Barras Principal -->
+        <section class="card glass-card card-chart">
+            <div class="chart-header">
+                <h3><span class="icon">📊</span> RENDIMIENTO MENSUAL DE VENTAS</h3>
+                <button id="btnRestaurar" class="btn-secondary">Restaurar Vista</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="graficaBarras"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script de Lógica -->
+    <script src="AnaPortilloJavaScript.js"></script>
+</body>
+</html>
